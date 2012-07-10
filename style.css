@@ -46,7 +46,6 @@ h2 {
     display: inline-block;
     vertical-align: middle;
     margin: 10px 10px 10px 0;
-    text-shadow: 1px 1px #000;
 }
 
 #header a:link, #footer a:link, #header a:visited, #footer a:visited {
@@ -57,6 +56,7 @@ h2 {
 
 #logo {
     font-size: 32px;
+    text-shadow: 1px 1px #555;
 }
 
 #main {
@@ -89,7 +89,22 @@ h2 {
 #inputButtons {
     margin: 15px auto 40px;
     position: relative;
-    text-align: right;
+}
+
+#inputButtons input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 2px 0;
+    text-align: center;
+}
+
+#inputButtons label {
+    text-shadow: 1px 1px 2px #aaa;
+}
+
+#hipit {
+    float: right;
 }
 
 .btn {
