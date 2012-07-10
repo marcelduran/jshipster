@@ -35,6 +35,7 @@
         // dom elements
         meterImg,
         source = doc.getElementById('source'),
+        indent = doc.getElementById('indent'),
         hipit = doc.getElementById('hipit'),
         output = doc.getElementById('output'),
         results = doc.getElementById('results');
@@ -72,7 +73,7 @@
                 coercion: 0
             },
             option = {
-                indent: 2
+                indent: parseInt(indent.value, 10) || 2
             },
             jslintResult = JSLINT(source.value, option),
             errors = JSLINT.data().errors || [];
@@ -92,6 +93,7 @@
                 if (check(reason, msg[key], key === 'comma')) {
                     hipster[key] += 1;
                     found = true;
+                    console.log(key, err.line, reason);
                 }
             }
         });
