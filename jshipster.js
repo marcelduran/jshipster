@@ -59,7 +59,7 @@
     };
 
     hip = function () {
-        var
+        var lastLine,
             hipster = {
                 semicolon: 0,
                 comma: 0,
@@ -70,7 +70,8 @@
                 curly: 0,
                 ret: 0,
                 expfunc: 0,
-                coercion: 0
+                coercion: 0,
+                bonus: 0
             },
             option = {
                 indent: parseInt(indent.value, 10) || 2
@@ -93,6 +94,11 @@
                 if (check(reason, msg[key], key === 'comma')) {
                     hipster[key] += 1;
                     found = true;
+                    if (lastLine === err.line) {
+                        hipster.bonus += 1;
+                    } else {
+                        lastLine = err.line;
+                    }
                     console.log(key, err.line, reason);
                 }
             }
@@ -142,6 +148,7 @@
             'early return: ' + hipster.ret,
             'clever function expression: ' + hipster.expfunc,
             'type coercion: ' + hipster.coercion,
+            'multi-hipster bonus: ' + hipster.bonus,
             '-----',
             'sum: ' + sum,
             'lines: ' + lines,
