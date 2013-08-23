@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
     <head>
+        <title>JSHipster</title>
+        <link rel="icon" type="image/png" href="favicon.ico">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -28,15 +30,27 @@
         </div>
         <div id="footer">
             <p>
-                Copyright &copy; 2012 &bull; 
+                Copyright &copy; 2013 &bull;
                 <a href="http://twitter.com/marcelduran">@marcelduran</a>
-                &bull; 
+                &bull;
                 <a href="http://twitter.com/stoyanstefanov">@stoyanstefanov</a>
-                - 
+                -
                 <a href="https://github.com/marcelduran/jshipster">Source Code</a>
             </p>
         </div>
         <script src="jslint.js"></script>
         <script src="jshipster.js"></script>
+        <script>
+          (function (d, s) {
+            var g = d.createElement(s),
+                h = d.getElementsByTagName(s)[0];
+            g.async = true;
+            g.src = '//www.google-analytics.com/ga.js';
+            _gaq = [['_setAccount', 'UA-3587044-1'], ['_trackPageview']];
+            setTimeout(function () {
+              h.parentNode.insertBefore(g, h);
+            }, 0);
+          }(document, 'script'));
+        </script>
     </body>
 </html>
